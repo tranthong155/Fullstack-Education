@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<head th:replace="layout/SinhVien/head :: head"></head>
+
+
+<body>
+
+<div th:replace="layout/SinhVien/login :: div "></div>
+<div th:replace="layout/SinhVien/register :: div"></div>
+
+
+
+<header th:replace="layout/SinhVien/header :: header"></header>
+
+<main>
+
+    <div th:replace="layout/ThongTin/addThongTin :: div"></div>
+
+
+
+
+</main>
+<footer th:replace="layout/SinhVien/footer :: footer"></footer>
+</body>
+
+</html>

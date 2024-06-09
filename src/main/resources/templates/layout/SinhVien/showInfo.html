@@ -1,0 +1,106 @@
+
+<div class="container-showinfo">
+    <div class="header">
+        <h1 th:text="${'Khóa học: '+selectedKhoaHoc.tenKH}"></h1>
+        </p>
+    </div>
+    <div class="content">
+        <div class="left-column">
+            <div class="benefits">
+                <div class="benefits-display">
+                    <h2>Bạn sẽ học được gì?</h2>
+
+                    <div th:if="${selectedKhoaHoc.sinhVien.idUser == session.getIdSinhVien}">
+                        <a class="benefits-sua" th:href="@{/editKH(idKhoaHoc=${selectedKhoaHoc.idKhoaHoc},idSV=${session.getIdSinhVien})}">Sửa khóa học</a>
+                        <a onclick="return confirm('Xóa sản phẩm')" class="benefits-xoa" th:href="@{/deleteKH-{id}(id=${selectedKhoaHoc.idKhoaHoc})}">Xóa khóa học</a>
+                    </div>
+
+                </div>
+
+                <ul>
+                    <li th:text="${selectedKhoaHoc.thongTin}"></li>
+
+                </ul>
+            </div>
+            <div class="course-info">
+                <div class="course-info_display">
+                    <h2>Nội dung khóa học</h2>
+                    <div th:if="${selectedKhoaHoc.sinhVien.idUser == session.getIdSinhVien}">
+                        <a class="benefits-sua" th:href="@{/ShowaddMonHoc(idKhoaHoc=${selectedKhoaHoc.idKhoaHoc},idSV=${session.getIdSinhVien})}">Thêm môn học</a>
+                </div>
+
+                </div>
+                <div class="course-details">
+                    <div class="course-section">
+                        <ul id="infoMonHocshow" th:each="findKHC, iterStat : ${listinfoMH}">
+                            <i class="fa-solid fa-circle-play"></i>
+                            <a  th:href="@{/showVideo(idKhoaHoc=${selectedKhoaHoc.idKhoaHoc},idSV=${session.getIdSinhVien}
+                            ,idMH=${findKHC.idMonHoc})}" class="showVideo_Css" th:text="${iterStat.index + 1} + '. ' + ${findKHC.tenMH}"></a>
+<!--                            <h1 th:text="${findKHC.videos} "></h1>-->
+
+
+
+
+
+
+
+
+
+                            <div th:if="${selectedKhoaHoc.sinhVien.idUser == session.getIdSinhVien}">
+                                <a onclick="return confirm('Xóa sản phẩm')"
+                                   class="benefits-xoa"
+                                   th:href="@{/deleteMonHoc-{id}(id=${findKHC.idMonHoc},idKhoaHoc=${selectedKhoaHoc.idKhoaHoc},idSV=${session.getIdSinhVien})}">Xóa</a>
+                            </div>
+
+                        </ul>
+
+
+
+                    </div>
+                    <div class="course-section">
+<!--                        <h3>2. Môi trường, con người IT</h3>-->
+                        <ul>
+<!--                            <li>...</li>-->
+                            <!-- Thêm các bài học khác vào đây -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="right-column">
+            <div class="course-sidebar">
+                <div class="course-intro">
+                    <img th:src="@{'/upload/hinhAnh/' + ${selectedKhoaHoc.img}}">
+                    <h2 th:text="${selectedKhoaHoc.giaKh > 0 ? selectedKhoaHoc.giaKh + ' VND' : 'Free'}">Miễn phí</h2>
+<!--                    <a class="enroll-button" th:href="@{/DkKhoaHoc(id=${selectedKhoaHoc.idKhoaHoc}, idSV=${session.getIdSinhVien})}"-->
+<!--                       th:text="${selectedKhoaHoc.dangKy ? 'Hủy Khóa Học' : 'Đăng Ký Học'}"></a>-->
+
+<!--                    <a class="enroll-button" th:href="@{/huyKhoaHoc(idKH=${selectedKhoaHoc.idKhoaHoc}, idSV=${session.getIdSinhVien})}"-->
+<!--                       th:text="${'Hủy Khóa Học'}"></a>-->
+
+                    <div >
+                        <a th:if="${isDangKyByCurrentUser == false}"
+                           th:href="@{/DkKhoaHoc(idKH=${selectedKhoaHoc.idKhoaHoc},
+                        idSV=${session.getIdSinhVien})}" class="enroll-button">Đăng Ký Học</a>
+                        <a th:if="${isDangKyByCurrentUser != false}"
+                           th:href="@{/huyKhoaHoc(idKH=${selectedKhoaHoc.idKhoaHoc}, idSV=${session.getIdSinhVien})}" class="cancel-button">Hủy Đăng Ký</a>
+
+                    </div>
+<!--                    <div th:if="${session.getIdSinhVien!=''}">-->
+<!--                        <a-->
+<!--                           th:href="@{/}" class="enroll-button">Đăng Ký Học</a>-->
+
+<!--                    </div>-->
+
+
+                </div>
+                <ul class="course-meta">
+                    <li>Trình độ cơ bản</li>
+                    <li >Tổng số 12 bài học</li>
+                    <li>Thời lượng 03 giờ 26 phút</li>
+                    <li>Học mọi lúc, mọi nơi</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

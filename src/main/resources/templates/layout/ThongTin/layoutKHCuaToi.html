@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<head th:replace="layout/SinhVien/head :: head"></head>
+
+
+<body>
+<!--<div th:replace="layout/SinhVien/video :: div "></div>-->
+
+<div th:replace="layout/SinhVien/login :: div "></div>
+<div th:replace="layout/SinhVien/register :: div"></div>
+
+
+
+<header th:replace="layout/SinhVien/header :: header"></header>
+
+<main>
+
+    <div class="contene_position">
+        <div class="themKhoaHoc" >
+            <h1>Khóa học của tôi</h1>
+
+<!--            <a th:href="@{/addKhoaHoc-{idSinhVien}(idSinhVien=${session.getIdSinhVien})}" th:if="${session.getRole == 'ROLE_GIAOVIEN'}">Thêm Khóa Học</a>-->
+        </div>
+        <!--    th:if="${selectedKhoaHoc != null}"-->
+        <div class="formatAll">
+            <div class="sanPham__danhMuc--content" th:each="khoaHoc : ${khoaHocs}">
+                <div  class="anToanBo" >
+                    <a th:href="@{/showInfo(idKhoaHoc=${khoaHoc.idKhoaHoc},
+                            IdSV=${session.getIdSinhVien})}" class="container__danhSach--xemNhanh">Xem Khóa Học</a>
+
+                </div>
+
+                <div class="content__danhMuc" >
+                    <img th:src="@{'/upload/hinhAnh/' + ${khoaHoc.img}}" alt="Product Image" />
+                    <div class="content__danhMuc-thongtin">
+                        <h2 th:text="${khoaHoc.tenKH}"></h2>
+                        <h5 th:text="${khoaHoc.giaKh > 0 ? khoaHoc.giaKh + ' VND' : 'Free'}"></h5>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+</main>
+<footer th:replace="layout/SinhVien/footer :: footer"></footer>
+</body>
+
+</html>

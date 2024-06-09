@@ -1,0 +1,60 @@
+
+<div class="container-showinfo" >
+    <div class="header-showinfo" >
+<!--        <h1 th:text="${selectedKhoaHoc.tenKH}"></h1>-->
+<!--        <p th:text="${selectedKhoaHoc.thongTin}">-->
+        </p>
+    </div>
+    <div class="content-showinfo">
+        <div class="left-column-showinfo">
+            <form th:action="@{/editKH(idKhoaHoc=${selectedKhoaHoc.idKhoaHoc},idSV=${session.getIdSinhVien})}" method="post"
+                  enctype="multipart/form-data" th:object="${selectedKhoaHoc}">
+                <input type="hidden" class="form-control" id="exampleInputEmail1" th:field=*{idKhoaHoc}>
+
+                <div class="register_formAll">
+                    <div class="add_khoaHoc">
+                        <div class="register_form--dangKy">
+                            <label for="tenKH">Tên khóa học</label><br />
+                            <input type="text" id="tenKH" th:field=*{tenKH} th:value="${selectedKhoaHoc.tenKH}"><br />
+
+                            <label for="giaKH" >Giá khóa học</label><br />
+                            <input type="text" id="giaKH" th:field=*{giaKh}  th:value="${selectedKhoaHoc.giaKh}"><br />
+
+
+                            <div class="form-group">
+                                <label>Loại khóa học</label>
+
+
+                                <select class="form_ListAddKH" style="width: 100%;" th:field=*{khoaHocChinh.idKhoaHocChinh}>
+                                    <option
+                                            th:each="listKhoaHoc : ${listKHChinh}"
+                                            th:value="${listKhoaHoc.idKhoaHocChinh}"
+                                            th:text="${listKhoaHoc.tenKHC}">
+                                    </option>
+                                </select>
+
+                            </div>
+                        </div>
+                        <div class="register_form--dangKy">
+
+
+                            <label >Chi tiết</label><br />
+                            <textarea id="comments" th:field=*{thongTin} th:text="${selectedKhoaHoc.thongTin}"></textarea>
+
+                            <label class="" >Hình ảnh</label><br />
+                            <input name="fileImage" type="file" th:text="*{img}">
+
+                        </div>
+
+
+                </div>
+                <div class="button-container">
+                    <button class="button-register_form"  style=" width: 300px" type="submit">Sửa khóa học</button>
+                </div>
+
+            </form>
+        </div>
+
+
+    </div>
+</div>

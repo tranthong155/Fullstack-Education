@@ -1,0 +1,42 @@
+<div class="container-showinfo">
+    <div class="header-showinfo">
+        <!-- <h1 th:text="${selectedKhoaHoc.tenKH}"></h1> -->
+        <!-- <p th:text="${selectedKhoaHoc.thongTin}"></p> -->
+    </div>
+    <div class="content-showinfo">
+        <div class="left-column-showinfo">
+                <form th:action="@{#}"
+                      method="post"  enctype="multipart/form-data" >
+
+                <div class="register_formAll">
+                    <div class="add_khoaHoc">
+                        <div class="register_form--dangKy">
+                            <label >Họ và Tên :</label>
+                            <label th:text="${listIDsv.hoTen}"></label><br />
+
+                            <label >Email :</label>
+                            <label th:text="${listIDsv.email}"></label><br />
+
+                            <label >Số điện thoại :</label>
+                            <label th:text="${listIDsv.Sdt}"></label><br />
+
+
+                        </div>
+                        <div class="register_form--dangKy" >
+                            <label >Khóa học đã đăng ký :</label><br />
+                            <div th:each="khoaHoc : ${khoaHocs}">
+                                <label th:text="${khoaHoc.tenKH}"></label><br />
+
+                            </div>
+
+                        </div>
+
+                    </div>
+<!--                    <div class="button-container">-->
+<!--                        <label >Khóa học đã đăng ký</label><br />-->
+<!--                    </div>-->
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

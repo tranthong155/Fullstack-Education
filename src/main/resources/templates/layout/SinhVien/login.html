@@ -1,0 +1,37 @@
+<div class="bodyDangNhap">
+    <div class="hiddenALl">
+    </div>
+    <div class="login-container">
+        <h2>Đăng Nhập Tài Khoản</h2>
+        <div class="modal__inner--dangNhap"><i class="fa-sharp fa-regular fa-circle-xmark"></i></div>
+
+        <form th:action="@{/signin}" method="post">
+            <div class="register_form--dangKy">
+            <label for="username">Tài khoản</label><br />
+            <input type="text" id="username" name="username"><br />
+
+            <label for="password">Mật khẩu</label><br />
+            <input type="password" id="password" name="password"><br />
+            </div>
+            <div class="button-container">
+                <button type="submit">Đăng nhập</button>
+            </div>
+        </form>
+<!--        <div th:if="${param.error}" class="alert alert-danger">-->
+<!--            Invalid email & Password</div>-->
+
+<!--        <div th:if="${param.logout}" class="alert alert-success">-->
+<!--            Logout Sucessfully</div>-->
+<!--    </div>-->
+
+<!--        <div class="register">-->
+<!--            Chưa có tài khoản? <a href="#">Đăng ký ngay</a>-->
+
+<!--        </div>-->
+        <div class="register">
+            Quên mật khẩu? <a th:href="@{/quenMatKhau}">Quên mật khẩu</a>
+
+        </div>
+    </div>
+
+</div>

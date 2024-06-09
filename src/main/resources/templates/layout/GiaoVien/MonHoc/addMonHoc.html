@@ -1,0 +1,35 @@
+<div class="container-showinfo">
+    <div class="header-showinfo">
+        <!-- <h1 th:text="${selectedKhoaHoc.tenKH}"></h1> -->
+        <!-- <p th:text="${selectedKhoaHoc.thongTin}"></p> -->
+    </div>
+    <div class="content-showinfo">
+        <div class="left-column-showinfo">
+                <form th:action="@{/addMonHoc(idKhoaHoc=${selectedKhoaHoc.idKhoaHoc},idSV=${session.getIdSinhVien})}"
+                      method="post"  enctype="multipart/form-data" th:object="${monHoc}">
+
+                <div class="register_formAll">
+                    <div class="add_khoaHoc">
+                        <div class="register_form--dangKy">
+                            <label for="tenMH">Tên môn học</label><br />
+                            <input type="text" id="tenMH" th:field="${monHoc.tenMH}"  /><br />
+
+                            <label for="TTMH">Thông tin môn học</label><br />
+                            <input type="text" id="TTMH" th:field="${monHoc.chiTiet}" /><br />
+                        </div>
+                        <div class="register_form--dangKy">
+<!--                            <label>Chi tiết</label><br />-->
+<!--                            <textarea id="comments" ></textarea><br />-->
+
+                            <label>Hình ảnh</label><br />
+                            <input name="videoFile"  type="file" />
+                        </div>
+                    </div>
+                    <div class="button-container">
+                        <button class="button-register_form" type="submit">Thêm khóa học</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

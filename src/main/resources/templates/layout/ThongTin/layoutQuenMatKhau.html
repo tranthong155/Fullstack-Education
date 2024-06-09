@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<head th:replace="layout/SinhVien/head :: head"></head>
+
+
+<body>
+<!--<div th:replace="layout/SinhVien/video :: div "></div>-->
+
+<div th:replace="layout/SinhVien/login :: div "></div>
+<div th:replace="layout/SinhVien/register :: div"></div>
+
+
+
+<header th:replace="layout/SinhVien/header :: header"></header>
+
+<main>
+
+    <div class="container-showinfo">
+        <div class="header-showinfo">
+            <!-- <h1 th:text="${selectedKhoaHoc.tenKH}"></h1> -->
+            <!-- <p th:text="${selectedKhoaHoc.thongTin}"></p> -->
+        </div>
+        <div class="content-showinfo">
+            <div class="left-column-showinfo">
+
+
+                <div class="left-column-showinfo">
+                    <form th:action="@{/xacNhanMa}" method="post" enctype="multipart/form-data" onsubmit="formatEmail()">
+
+                        <div class="register_formAll">
+                            <div class="add_khoaHoc">
+                                <div class="register_form--dangKy">
+                                    <label for="email">Nhập gmail của bạn: </label>
+                                    <input type="text" id="email" name="email"><br />
+                                </div>
+                            </div>
+                            <div class="button-container">
+                                <button class="button-register_form" style="width: 300px;" type="submit">Đổi mật khẩu</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+
+        </div>
+        </div>
+    </div>
+
+
+
+</main>
+<footer th:replace="layout/SinhVien/footer :: footer"></footer>
+</body>
+
+</html>

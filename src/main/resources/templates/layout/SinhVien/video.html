@@ -1,0 +1,12 @@
+<div class="showVideo">
+    <a th:href="@{/showInfo(idKhoaHoc=${selectedKhoaHoc.idKhoaHoc},idSV=${session.getIdSinhVien})}" class="hiddenVideol"></a>
+    <div class="showVideo-container" >
+        <h2 >Môn học</h2>
+        <a th:href="@{/showInfo(idKhoaHoc=${selectedKhoaHoc.idKhoaHoc},idSV=${session.getIdSinhVien})}" class="modal__inner--showVideo"><i class="fa-sharp fa-regular fa-circle-xmark"></i></a>
+
+        <video class="startVideo" controls autoplay loop muted>
+            <!--      <source th:src="@{upload/video/video.mp4}" type="video/mp4">-->
+            <source th:src="@{'/upload/video/' + ${selecIDMH.videos}}" type="video/mp4">
+        </video>
+    </div>
+</div>

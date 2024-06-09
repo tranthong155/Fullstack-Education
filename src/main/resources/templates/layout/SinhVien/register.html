@@ -1,0 +1,94 @@
+<div class="bodyDangKy">
+    <div class="hiddenALl__dangKy"></div>
+    <div class="register-container">
+        <h2>Đăng Ký Tài Khoản</h2>
+        <div class="modal__inner--dangKy"><i class="fa-sharp fa-regular fa-circle-xmark"></i></div>
+        <form action="/saveUser" method="post" enctype="multipart/form-data" onsubmit="return validateForm()">
+            <div class="register_formAll">
+                <div class="register_form">
+
+                    <div class="register_form--dangKy">
+
+                        <label for="userName">Tài khoản</label><br />
+                        <input type="text" id="userName" name="userName"><br />
+
+                        <label for="password">Mật khẩu</label><br />
+                        <input type="password" id="password" name="password"><br />
+
+                        <label for="Sdt">Số điện thoại</label><br />
+                        <input type="text" id="Sdt" name="Sdt"><br />
+
+                        <label class="">Hình ảnh</label><br />
+                        <input name="img" type="file">
+
+                    </div>
+                    <div class="register_form--dangKy">
+                        <label for="hoTen">Họ Tên</label><br />
+                        <input type="text" id="hoTen" name="hoTen"><br />
+
+                        <label for="Email">Email</label><br />
+                        <input type="text" id="Email" name="Email"><br />
+
+                        <label for="role">Chức vụ</label><br />
+                        <select id="role" name="role" >
+                            <option value="ROLE_HOCSINH">Học sinh</option>
+                            <option value="ROLE_GIAOVIEN">Giáo viên</option>
+                        </select><br /></div>
+                    </div>
+
+                </div>
+                <div class="button-container">
+                    <button class="button-register_form" type="submit">Đăng ký</button>
+                </div>
+<!--                <div class="register">-->
+<!--                    Chuyển lại trang <a href="#"> Đăng ký</a>-->
+<!--                </div>-->
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+    function validateForm() {
+        var username = document.getElementById("userName").value;
+        var password = document.getElementById("password").value;
+        var phoneNumber = document.getElementById("Sdt").value;
+        var fullName = document.getElementById("hoTen").value;
+        var email = document.getElementById("Email").value;
+
+        // Kiểm tra xem tên đăng nhập có rỗng không
+        if (username.trim() === "") {
+            alert("Vui lòng nhập tên đăng nhập.");
+            return false;
+        }
+
+        // Kiểm tra xem mật khẩu có ít nhất 6 ký tự không
+        if (password.length < 6) {
+            alert("Mật khẩu phải chứa ít nhất 6 ký tự.");
+            return false;
+        }
+
+        // Kiểm tra xem số điện thoại có hợp lệ không
+        if (phoneNumber.trim() === "" || isNaN(phoneNumber)) {
+            alert("Vui lòng nhập số điện thoại hợp lệ.");
+            return false;
+        }
+
+        // Kiểm tra xem hình ảnh đã được chọn chưa (tùy chọn)
+
+        // Kiểm tra xem tên đầy đủ có rỗng không
+        if (fullName.trim() === "") {
+            alert("Vui lòng nhập họ tên đầy đủ.");
+            return false;
+        }
+
+        // Kiểm tra xem email có hợp lệ không
+        var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+            alert("Vui lòng nhập địa chỉ email hợp lệ.");
+            return false;
+        }
+
+        return true; // Trả về true nếu tất cả các điều kiện được đáp ứng
+    }
+</script>

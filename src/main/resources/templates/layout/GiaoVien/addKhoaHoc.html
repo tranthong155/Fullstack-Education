@@ -1,0 +1,45 @@
+<div class="container-showinfo">
+    <div class="header-showinfo">
+        <!-- <h1 th:text="${selectedKhoaHoc.tenKH}"></h1> -->
+        <!-- <p th:text="${selectedKhoaHoc.thongTin}"></p> -->
+    </div>
+    <div class="content-showinfo">
+        <div class="left-column-showinfo">
+                <form th:action="@{/saveKhoaHoc-{id}(id=${session.getIdSinhVien})}"
+                      method="post"  enctype="multipart/form-data" th:object="${khoaHoc}">
+
+                <div class="register_formAll">
+                    <div class="add_khoaHoc">
+                        <div class="register_form--dangKy">
+                            <label for="tenMH">Tên môn học</label><br />
+                            <input type="text" id="tenMH" th:field="${khoaHoc.tenKH}"  /><br />
+
+                            <label for="giaKH">Giá khóa học</label><br />
+                            <input type="text" id="giaKH" th:field="${khoaHoc.giaKh}" /><br />
+
+                            <label for="giaKH">Khóa học</label><br />
+                            <select class="form_ListAddKH" style="width: 100%;" th:field=*{khoaHocChinh}>
+                                <option
+                                        th:each="listKhoaHoc : ${listKHChinh}"
+                                        th:value="${listKhoaHoc.idKhoaHocChinh}"
+                                        th:text="${listKhoaHoc.tenKHC}">
+                                </option>
+                            </select>
+                        </div>
+                        <div class="register_form--dangKy">
+                            <label>Thông Tin môn học</label><br />
+                            <textarea id="comments" th:field="${khoaHoc.thongTin}" ></textarea><br />
+
+                            <label>Hình ảnh</label><br />
+                            <input name="fileImage" type="file" />
+                        </div>
+                    </div>
+
+                    <div class="button-container" >
+                        <button class="button-register_form" style="width: 300px" type="submit">Thêm khóa học</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

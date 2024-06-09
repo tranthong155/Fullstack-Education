@@ -1,0 +1,202 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+
+.container-showinfo {
+    width: 80%;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+    /*text-align: center;*/
+    margin-bottom: 20px;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 2em;
+}
+
+.header p {
+    margin: 10px 0;
+    color: #555;
+}
+
+.content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.left-column,
+.right-column {
+    flex: 1;
+}
+
+.left-column {
+    margin-right: 20px;
+}
+
+.benefits {
+    margin-bottom: 20px;
+}
+
+.benefits h2 {
+    color: #e44d26;
+    font-size: 1.5em;
+}
+
+.benefits ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.benefits ul li {
+    margin-bottom: 10px;
+}
+
+.course-info {
+    margin-bottom: 20px;
+}
+
+.course-info h2 {
+    color: #333;
+    font-size: 1.5em;
+}
+
+.course-info p {
+    color: #999;
+}
+
+.course-details {
+    margin-top: 20px;
+}
+
+.course-section {
+    margin-bottom: 20px;
+}
+
+.course-section h3 {
+    background-color: #f1f1f1;
+    padding: 10px;
+    margin: 0;
+    cursor: pointer;
+    font-weight: normal;
+}
+
+.course-section ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: block;
+}
+
+.course-section ul {
+    padding: 10px;
+    /*border-bottom: 1px solid #ddd;*/
+}
+
+.showVideo_Css {
+    text-decoration: none;
+    border-bottom: 1px solid #ddd;
+    color: #333;
+    margin: 0px 10px;
+}
+
+.right-column {
+    max-width: 300px;
+}
+
+.course-sidebar {
+    padding: 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.course-intro {
+    margin-bottom: 20px;
+}
+
+.course-intro h2 {
+    color: #e44d26;
+    font-size: 1.5em;
+}
+
+.course-intro img{
+    width: 252px;
+    border-radius: 10px;
+}
+
+.course-intro a{
+    border-radius: 10px;
+    text-decoration: none;
+}
+
+.enroll-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #0074d9;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.cancel-button{
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #e44d26;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.course-meta {
+    list-style-type: none;
+    padding: 0;
+    text-align: left;
+    margin-top: 20px;
+}
+
+.course-meta li {
+    margin-bottom: 10px;
+    color: #555;
+}
+
+.benefits-display{
+    display: flex;
+    align-items: center;
+}
+.benefits-thayDoi{
+    height: 30px;
+}
+.benefits-sua{
+    color: white;
+    background-color: #0074d9;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 10px;
+    text-decoration: none;
+}
+
+.benefits-xoa{
+    color: white;
+    background-color: #e44d26;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 10px;
+    text-decoration: none;
+}
+
+.course-info_display{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}

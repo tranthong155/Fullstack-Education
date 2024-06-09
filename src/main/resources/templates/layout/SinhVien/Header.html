@@ -1,0 +1,53 @@
+<header>
+    <div class="container">
+        <div class="logo">
+            <a href="/"><img th:src="@{upload/hinhAnh/img.png}" alt="Fullstack Logo"></a>
+            <a href="/" class="logo_header">Học Để Phát Triển</a>
+        </div>
+        <form class="search-bar" action="" method="get">
+
+        <div >
+            <input type="text" name="keyword" th:value="${keyword}" placeholder="Tìm kiếm khóa học, bài viết, video, ...">
+        </div>
+        </form>
+
+        <div class="auth-buttons">
+            <div th:if="${session.username == null}">
+                <a href="#" class="header_DangNhap login-button">Đăng nhập</a>
+                <a href="#" class="header_DangKy signup-button">Đăng ký</a>
+            </div>
+            <div  th:if="${session.username != null}">
+                <div class="ShowThongTin">
+                    <span>Xin chào: <span th:text="${session.hoTen}">Tên người dùng</span></span>
+                    <i class="fa-solid fa-caret-down"></i>
+                    <div class="hienToanBoTT">
+                        <a th:href="@{/ShowThongTin-{id}(id=${session.getIdSinhVien})}">Hồ sơ của tôi</a>
+                        <a th:href="@{/KhoaHocCuaToi-{id}(id=${session.getIdSinhVien})}">Khóa học của tôi</a>
+                        <a th:href="@{/DoiMatKhau-{id}(id=${session.getIdSinhVien})}">Đổi mật khẩu</a>
+                        <a th:href="@{/admin-logout}" class="header_DangKy signup-button">Thoát</a>
+                    </div>
+                </div>
+
+            </div>
+            <p th:if="${param.error}">
+                Tên đăng nhập hoặc mật khẩu không đúng.
+            </p>
+        </div>
+
+
+    </div>
+    <nav>
+        <div class="nav-body">
+            <h1>CHỌN LỚP CỦA BẠN VÀ CÙNG HỌC NHÉ!</h1>
+            <ul >
+                <li >
+                    <a href="/" >Tất cả</a> </li >
+                <li th:each="KHChinh : ${listKHChinh}">
+                    <a th:href="@{/showList-{idKhoaHoc}(idKhoaHoc=${KHChinh.idKhoaHocChinh})}" th:text="${KHChinh.tenKHC}"></a>
+                </li>
+
+
+            </ul>
+        </div>
+    </nav>
+</header>

@@ -1,0 +1,131 @@
+.footer {
+    background-color: #09253d;
+    padding-top: 15px;
+    padding-bottom: 35px;
+    position: relative;
+
+}
+
+.footer__carmudi {
+    margin: 30px 200px;
+    display: flex;
+    padding-bottom: 40px;
+}
+
+.footer__camudi--head {
+    width: 300px;
+    height: 400px;
+    color: white;
+    margin-right: 60px;
+}
+
+.footer__camudi--head img {
+    width: 200px;
+    height: 100px;
+}
+
+.footer__camudi--p {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 25px;
+    margin: 0;
+}
+
+.footer__camudi--head i {
+    font-size: 20px;
+    margin: 20px 10px;
+}
+
+.footer__camudi--footer {
+    margin-top: 30px;
+    color: white;
+    width: 100%;
+    height: 400px;
+}
+
+.footer__footer--p {
+    font-size: 20px;
+    margin: 15px 0;
+    font-weight: 300;
+}
+
+.footer__footer--span {
+    font-size: 16px;
+    margin: 15px 0;
+    font-weight: 300;
+}
+
+.footer__footer--serch {
+    display: flex;
+    width: 400px;
+    height: 40px;
+    background-color: white;
+    border-radius: 30px;
+}
+
+.footer__input--span {
+    font-size: 16px;
+    position: absolute;
+    color: white;
+    text-align: center;
+    background-color: #1a6fb7;
+    padding: 11px;
+    border-radius: 12px;
+    cursor: pointer;
+    top: 176px;
+    right: 616px;
+}
+
+.footer__footer--input {
+    border-radius: 30px;
+    outline: none;
+    width: 400px;
+    height: 40px;
+
+}
+
+.footer__footer--ulli {
+    display: flex;
+    border-bottom: 1px dashed #ccc;
+    width: 800px;
+}
+
+.footer__footer--ul {
+    width: 200px;
+    margin-top: 40px;
+    /* margin-right: 20px; */
+    padding: 0;
+}
+
+.footer__footer--li {
+    list-style: none;
+    font-size: 16px;
+    font-weight: 300;
+    color: #8f93a4;
+    margin: 10px 0;
+}
+
+.footer__footer--ul span {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.footer__cuoiCung {
+    /* text-align: center; */
+    font-size: 14px;
+    line-height: 20px;
+    /* margin-right: 300px; */
+}
+
+.footer__cuoiCung p {
+
+    margin: 0;
+}
+
+.banXe__chonHangXe--marquee {
+    margin-left: 24px;
+    width: 350px;
+    height: 300px;
+    /* padding-right: 40px; */
+    margin-bottom: 80px;
+}

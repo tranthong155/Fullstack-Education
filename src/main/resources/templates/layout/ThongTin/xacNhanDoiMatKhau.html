@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<head th:replace="layout/SinhVien/head :: head"></head>
+
+
+<body>
+<!--<div th:replace="layout/SinhVien/video :: div "></div>-->
+
+<div th:replace="layout/SinhVien/login :: div "></div>
+<div th:replace="layout/SinhVien/register :: div"></div>
+
+
+
+<header th:replace="layout/SinhVien/header :: header"></header>
+
+<main>
+
+    <div class="container-showinfo">
+        <div class="header-showinfo">
+            <!-- <h1 th:text="${selectedKhoaHoc.tenKH}"></h1> -->
+            <!-- <p th:text="${selectedKhoaHoc.thongTin}"></p> -->
+        </div>
+        <div class="content-showinfo">
+            <div class="left-column-showinfo">
+
+                <form th:action="@{/thayDoiMatKhau}"
+                      method="get" enctype="multipart/form-data">
+                    <div class="register_formAll">
+                        <div class="add_khoaHoc">
+                            <div class="register_form--dangKy">
+                                <input type="hidden" class="form-control" id="idUser"  name="idUser" th:value=*{maXacNhanSV.idUser}>
+                                <label for="nhapLai">Nhập mật khẩu mới: </label>
+                                <input type="password" id="nhapLai" name="nhapLai"><br />
+                                <label for="mkMoi">Nhập lại mật khẩu mới: </label>
+                                <input type="password" id="mkMoi" name="mkMoi"><br />
+                            </div>
+                        </div>
+                        <div th:if="${success}" class="alert alert-success" style="  color: #0074d9;  ">
+                            <p th:text="${success}"></p>
+                        </div>
+                        <div th:if="${error}" class="alert alert-danger" style=" color: #ff5722; ">
+                            <p th:text="${error}"></p>
+                        </div>
+
+
+                        <div class="button-container">
+                            <button class="button-register_form"  style="width: 300px;" type="submit">Đổi mật khẩu</button>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+
+
+</main>
+<footer th:replace="layout/SinhVien/footer :: footer"></footer>
+</body>
+
+</html>
